@@ -56,7 +56,7 @@ AccountSchema.pre('save', function(next) {
 });
 
 AccountSchema.methods.validatePassword = function(password, callback) {
-    bcrypt.compare(password, this.password, function(err, isMatch) {      
+    bcrypt.compare(password, this.password, function(err, isMatch) {
         if (err) return callback(err);
         callback(null, isMatch);
     });
